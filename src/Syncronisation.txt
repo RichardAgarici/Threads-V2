@@ -1,0 +1,26 @@
+1. Resource sharing : more than one Threads accessing a resource ( file, api )
+Every thread has its own stack trace, but the heap remains the same. The Object can be used by multiple Threads.
+ex: more people can work on a house, but not at the same time.
+
+2. Critical Section : is that part of the code, where let's say 2 threads have to share the same resource.
+If they "meet", it can cause problem, and we have to hardcode it.
+
+3. Mutual Exclusion : again the example of the working guys. One has to start where the other finished.
+Another example : a printer without a queue. printer will print astray.
+Motor combustion valve. Another example.
+
+4. Locking/Mutex: it's like having a lock and a key. while a thread is working, he "locks" himself in the resource with
+a key called Mutex, which is an Object of Java. Its values are 0 and 1. when a thread is entering it sets the mutex to 1
+After finishing, the thread sets the mutex to 0 and leaves.
+There is a problem with this implementation. Remember the washing machine example from the family house.
+it's like looking at a parking spot and someone is stealing it from you. or more precise, you both see the parking spot
+and try to park at the same time, while hitting each other.
+
+5. Semaphore : also a class. It has 2 methods wait(), signal() and a "block queue" also keeping the mutex variable.
+Example : atm with 3 people in a queue, all wanting to take money out at the same time. Without a "guardian" it would
+produce chaos. The guardian is checking the mutex if it's 1 or 0;
+The "security guard" is making sure every thread is queued up evenly before using the mutex.
+
+6. Monitor.
+7. RaceCondition.
+8. Inter-Thread Communication.

@@ -1,8 +1,56 @@
 //        [============================================================================================================]
-//        [============================================================================================================]
-//        [============================================================================================================]
+//      Daemon, Join, Yield Methods:
+//class MyThread extends Thread {
+//    @Override
+//    public void run() {
+//        int count = 1;
+//
+//        while (true) {
+////            System.out.println(count++);
+//            System.out.println(count++ +" My Thread");
+//        }
+//    }
+//}
+//public class ThreadTest {
+//
+//    public static void main(String[] args) throws Exception {
+//        MyThread t = new MyThread();
+//        t.start();
+//        int count = 1 ;
+//        while (true){
+//            System.out.println(count++ +" Main ");
+////            Thread.yield(); // if we put this yield() we are basically putting the thread in a queue. allowing the rest.
+//         }
+//
 //        [======================================================]
+//        MyThread t = new MyThread();
+//        t.setDaemon(true);
+//        t.start();
 //        [======================================================]
+
+//        [======================================================]
+//        Thread mainThread = Thread.currentThread();
+//        mainThread.join();
+//        [======================================================]
+
+
+//        [======================================================]
+        // to set it up inside the MyThread() class, we have to call it in the constructor.
+        //if the Daemon(the on/off switch) is set to true and if the main method's thread stops, also the thread will stop.
+        //it's like blocking a pipeline of water to invade the swimming pool.
+//        [======================================================]
+
+//        [======================================================]
+//        t.setDaemon(true);
+//        try {
+//        Thread.sleep(1_000);
+//        }catch (Exception e){
+//            System.out.println("Terminated.");
+//        }
+        // basically the try/catch block lets the main method to run for a while and after that will stop, putting the
+        // daemon on, not letting any data flow anymore.
+//        [======================================================]
+//        [============================================================================================================]
 //public class ThreadTest {
 //
 //    public static void main(String[] args) throws Exception {
@@ -45,10 +93,10 @@
 //
 //    public static void main(String[] args) throws Exception {
 //        MyThread t = new MyThread("My Thread");
-//    }
-//            }
 //        t.start();
 //        t.interrupt();
+//    }
+//            }
 // IMPORTANT!
 //        [============================================================================================================]
 //class MyRun implements Runnable {
