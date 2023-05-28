@@ -1,0 +1,43 @@
+Multiprogramming :
+Multi-User
+
+MultiTasking -> MultiThread ( for single users )
+
+The threading is based on the CPU
+
+The Threads can be put in the same class or in different classes
+
+States of a thread :
+
+
+        Start             Run               End
+[new]     - >       [ready]->[Running]->[Terminated].
+                           //      ||  \\
+                          //       ||   \\
+                         //        ||    \\
+                        //         ||     \\
+                       //          ||      \\
+                      //           ||       \\
+                     //            ||       Blocked(I/O)
+                    //           Timed wait
+                wait/notify      sleep
+                  [wait]         wait
+if you start and terminate the thread in a single run application, you can't restart it.
+you have to specifically start a new thread
+
+Priorities:
+Thread.MIN_PRIORITY =1
+Thread.NORM_PRIORITY=5
+Thread.MAX_PRIORITY =10
+
+Ready Queue its like a stack trace for Threads, ex 5 thread all stacked up. We prioritize them using the above.
+This will be maintained by the JVM. This is called schedule. These Threads are operated by the CPU.
+If we don't specify any particular time, the schedule will automatically distribute the time evenly
+
+Thread class :
+Constructor:
+Thread()
+Thread(String name)
+Thread(Runnable r)
+Thread(Runnable r, String name)
+Thread(ThreadGroup g,String name ) =
